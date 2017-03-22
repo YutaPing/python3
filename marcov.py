@@ -38,12 +38,10 @@ if __name__ == "__main__":
     while count < 50:
         #keyがmarkovのValue中に入ってない時 抜ける
         if ((w1, w2) in markov) == False:
-            #print("inner")
             break
         else:
             tmp = random.choice(markov[(w1, w2)])
             sentence += tmp
             w1, w2 = w2, tmp
             count += 1
-
     print(sentence)
